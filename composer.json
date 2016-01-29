@@ -1,0 +1,12 @@
+{
+    "name": "root/poker",
+    "authors": [
+        {
+            "name": "Hannah Kim",
+            "email": "hrk624@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^4"
+    }
+}
