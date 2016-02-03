@@ -67,10 +67,16 @@ class Card
         return $this->value;
     }
 
+    /**
+     * @return mixed
+     */
     public function getValueLabel(){
         return array_search($this->getValue(), self::getValues());
     }
 
+    /**
+     * @return mixed
+     */
     public function getSuitLabel(){
         return array_search($this->getSuit(), self::getSuits());
     }

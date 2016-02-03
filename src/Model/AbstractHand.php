@@ -3,8 +3,15 @@ namespace Model;
 
 abstract class AbstractHand extends AbstractCardCollection
 {
+    /**
+     * @return mixed
+     */
     public abstract function getMaxCardCount();
 
+    /**
+     * @param Card $card
+     * @return array|Card[]
+     */
     protected function addCard(Card $card){
         $this->cards[]= $card;
         return $this->getCards();

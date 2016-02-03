@@ -7,7 +7,6 @@ if (!is_int($input) || $input < 2 || $input > 12 ){
 }
 $playerCount = $input;
 $players=[];
-new \Model\Deck();
 $deck = new \Model\Deck();
 $deck->shuffleDeck();
 

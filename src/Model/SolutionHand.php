@@ -42,6 +42,9 @@ class SolutionHand extends AbstractHand
         $this->straightFlushCheck();
     }
 
+    /**
+     * @return int
+     */
     public function getMaxCardCount(){
         return 5;
     }
@@ -70,6 +73,9 @@ class SolutionHand extends AbstractHand
         return $this->handType;
     }
 
+    /**
+     * @return Card
+     */
     protected function highCardCheck(){
         $this->sortByValue();
         $this->handType = self::TYPE_HIGH_CARD;
@@ -77,6 +83,9 @@ class SolutionHand extends AbstractHand
         $this->highValue = end($cards)->getValue();
     }
 
+    /**
+     * @return Card
+     */
     protected function onePairCheck(){
         foreach($this->getStackByValue() as $element){
             if (count($element) === 2) {
@@ -87,6 +96,9 @@ class SolutionHand extends AbstractHand
         }
     }
 
+    /**
+     * @return Card
+     */
     protected function twoPairCheck() {
         $counter = 0;
         $highVal = null;
@@ -105,6 +117,9 @@ class SolutionHand extends AbstractHand
         }
     }
 
+    /**
+     * @return Card
+     */
     protected function threeKindCheck(){
         foreach($this->getStackByValue() as $element){
             if (count($element) === 3) {
@@ -115,6 +130,9 @@ class SolutionHand extends AbstractHand
         }
     }
 
+    /**
+     * @return Card
+     */
     protected function fourKindCheck(){
         foreach($this->getStackByValue() as $element){
             if (count($element) === 4) {
@@ -125,6 +143,9 @@ class SolutionHand extends AbstractHand
         }
     }
 
+    /**
+     * @return Card
+     */
     protected function fullHouseCheck(){
         $hasPair = false;
         $threeKindValue = null;
@@ -142,6 +163,9 @@ class SolutionHand extends AbstractHand
         }
     }
 
+    /**
+     * @return Card
+     */
     protected function flushCheck(){
         foreach($this->getStackBySuit() as $element){
             if (count($element) === 5) {
@@ -154,6 +178,9 @@ class SolutionHand extends AbstractHand
         }
     }
 
+    /**
+     * @return Card
+     */
     protected function straightCheck(){
         $lastCardVal = null;
         $this->sortByValue();
@@ -169,6 +196,9 @@ class SolutionHand extends AbstractHand
 
     }
 
+    /**
+     * @return Card
+     */
     protected function straightFlushCheck(){
         $lastCardVal = null;
         $this->sortByValue();

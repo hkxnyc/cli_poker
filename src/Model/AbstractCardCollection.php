@@ -16,6 +16,9 @@ abstract class AbstractCardCollection
         return $this->cards;
     }
 
+    /**
+     *
+     */
     public function sortByValue(){
         usort($this->cards, function(Card $a, Card $b){
             if ($a->getValue() === $b->getValue()){
@@ -25,6 +28,9 @@ abstract class AbstractCardCollection
         });
     }
 
+    /**
+     *
+     */
     public function sortBySuit(){
         usort($this->cards, function(Card $a, Card $b){
             $cmp = strcmp($a->getSuit(), $b->getSuit());
@@ -35,6 +41,9 @@ abstract class AbstractCardCollection
         });
     }
 
+    /**
+     * @return array
+     */
     public function getStackByValue(){
         $result = [];
         $cards = $this->getCards();
@@ -44,6 +53,9 @@ abstract class AbstractCardCollection
         return $result;
     }
 
+    /**
+     * @return array
+     */
     public function getStackBySuit(){
         $result = [];
         $cards = $this->getCards();

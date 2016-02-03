@@ -3,15 +3,21 @@ namespace Model;
 
 class Player extends AbstractHand
 {
-   public function getMaxCardCount(){
+    /**
+     * @return int
+     */
+    public function getMaxCardCount(){
         return 2;
     }
 
+    /**
+     * @param Dealer $dealer
+     * @return SolutionHand|null
+     */
     public function getWinningHand(Dealer $dealer){
         $winningHand = null;
         $allCards = array_merge($this->getCards(), $dealer->getCards());
         $allCardCombos = $this->getCombinations($allCards, 5);
-//        die(var_dump(count($allCardCombos)));
         foreach($allCardCombos as $cardCombo){
             $solutionHand = new SolutionHand($cardCombo);
             if (!$winningHand || $solutionHand->diff($winningHand) > 0) {
@@ -21,6 +27,11 @@ class Player extends AbstractHand
         return $winningHand;
     }
 
+    /**
+     * @param $base
+     * @param $n
+     * @return array|void
+     */
     protected function getCombinations($base,$n){
         #borrowed this function from StackOverflow
         $baselen = count($base);

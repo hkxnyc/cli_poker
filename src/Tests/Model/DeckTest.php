@@ -7,4 +7,5 @@ use Model\Deck;
 
 class DeckTest extends \PHPUnit_Framework_TestCase
 {
+
 }
