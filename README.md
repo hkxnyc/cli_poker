@@ -1,9 +1,9 @@
-# php_poker
+Within php_poker/src :<br />
 
-From the Terminal, 
-To run unit tests,cd into ‘php_poker/src’ and run: 
-../vendor/bin/phpunit ../src/Tests/Model/CardTest.php
-../vendor/bin/phpunit ../src/Tests/Model/SolutionHandTest.php
+Tests: <br />
+../vendor/bin/phpunit ../src/Tests/Model/CardTest.php <br />
+../vendor/bin/phpunit ../src/Tests/Model/SolutionHandTest.php <br />
 
-To play the game, please cd into ‘php_poker/src’ and run:
-php Main.php
+Play game: <br />
+php Main.php <br />
+
